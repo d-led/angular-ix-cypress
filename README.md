@@ -1,27 +1,17 @@
-# AngularIxCypress
+# Angular Ix Cypress
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
 
-## Development server
+## Cypress e2e `document.body` is `null` in `Popover.destroy` bug reproduction
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- `npm i`
+- `ng serve` in one console
+- open Cypress: `npx cypress open --e2e --browser chrome`
+- open the spec in the opened Chrome Browser (the tests should pass)
+- open the Developer Tools/Console in that browser
+- hover over the test steps (DOM snapshots will be loaded)
+- `document.body` is `null` &rarr; exception at: [popover.util.ts:L37](https://github.com/siemens/ix/blob/ce5d7cb3e31327e84e02d4a017493ece90caf98e/packages/core/src/components/utils/popover.util.ts#L37)
 
-## Code scaffolding
+Screen recording (made with [LICEcap](https://www.cockos.com/licecap/)):
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![reproduction](./docs/img/cy-ix-body-null.gif)
