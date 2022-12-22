@@ -133,3 +133,5 @@ dist
 
 # tmp, don't do it normally
 package-lock.json
+
+.idea/
