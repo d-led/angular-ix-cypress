@@ -31,6 +31,9 @@
     "strictTemplates": true
   },
   "include": [
-    "node_modules/cypress/angular/dist"
+    "node_modules/cypress",
+    "cypress/support/component.ts",
+    "cypress/support/commands.ts",
+    "node_modules/cypress/types/cypress-global-vars.d.ts"
   ]
 }
