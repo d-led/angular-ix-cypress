@@ -12,5 +12,6 @@ describe('Some Component', () => {
     });
 
     cy.contains(': 42').should('be.visible')
+    cy.get('app-some-other-component').should('be.visible')
   })
 })
