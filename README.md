@@ -4,6 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Cypress e2e `document.body` is `null` in `Popover.destroy` bug reproduction
 
+> fixed in ix 1.3
+
 - `npm i`
 - `ng serve` in one console
 - open Cypress: `npx cypress open --e2e --browser chrome`
